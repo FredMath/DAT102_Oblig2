@@ -86,14 +86,41 @@ class DataKontakt {
 	
 	public MedlemsPar[] finnPar(){
 		MedlemsPar[] mp = new MedlemsPar[antall/2+1];
+		int antallPar = 0;
 		
 		for(int i = 0; i < antall; i++){
-			for(int j = 0; j < antall && j != i; j++){
+			if(medlemsListe[i].getStatusIndex() != -1){
+				int p = medlemsListe[i].getStatusIndex();
 				
+				MedlemsPar par = new MedlemsPar(medlemsListe[i],medlemsListe[p]);
+				
+				boolean unikt = true;
+				for(int j = 0; j < antallPar && unikt; j++){
+					if(par.erSamme(mp[j])){
+						unikt = false;
+					}
+				}
+				
+				if(unikt){
+					mp[antallPar] = par;
+					antallPar++;
+				}
 			}
 		}
 		
-		return mp;
+		MedlemsPar[] mp2 = new MedlemsPar[antallPar];
+		
+		for(int i = 0; i < antallPar; i++){
+			mp2[i] = mp[i];
+		}
+		
+		return mp2;
+	}
+	
+	public void finnPartnere(){
+		for(int i = 0; i < antall; i++){
+			finnPartnerFor(medlemsListe[i].getNavn());
+		}
 	}
 
 	public Iterator<Medlem> oppramser() {
@@ -115,6 +142,7 @@ class DataKontakt {
 
 		return inneholder;
 	}
+	
 
 	// GET
 	public int getAntall() {

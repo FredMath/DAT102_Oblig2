@@ -23,11 +23,14 @@ public class Tekstgrensesnitt {
 	
 	public static void skrivParListe(DataKontakt arkiv){
 		
-		// Finn par
+		MedlemsPar[] mp = arkiv.finnPar();
 		
-		
+		System.out.println("Antall par: " + mp.length);
 		System.out.println("PARNAVN\t\tHOBBYER");
-		
+		for(MedlemsPar m : mp){
+			System.out.print(m.toString() + "\t\t");
+			System.out.println(m.getHobbyer());
+		}
 		
 		
 	}

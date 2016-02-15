@@ -23,6 +23,15 @@ public class MedlemsPar {
 		return like;
 	}
 	
+	@Override
+	public String toString(){
+		return "<" + par[0].getNavn() + " og " + par[1].getNavn() + ">";
+	}
+	
+	public String getHobbyer(){
+		return par[0].getHobbyer();
+	}
+	
 	public Medlem[] getPar(){
 		return par;
 	}

@@ -19,6 +19,13 @@ public class Klient {
 		m3.leggTilHobby(h2);
 		m4.leggTilHobby(h1);
 		
+		dk.leggTilMedlem(m1);
+		dk.leggTilMedlem(m2);
+		dk.leggTilMedlem(m3);
+		dk.leggTilMedlem(m4);
+		
+		dk.finnPartnere();
+		
 		Tekstgrensesnitt.skrivParListe(dk);
 		
 	}
