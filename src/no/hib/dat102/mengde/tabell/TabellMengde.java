@@ -92,8 +92,6 @@ public class TabellMengde<T> implements MengdeADT<T> {
 		}
 
 		return begge;
-		
-		// O-notasjon: x^2 + x*1.5y		, hvor x = antall i m1, og y = antall i m2
 	}
 	
 	public MengdeADT<T> bedreUnion(MengdeADT<T> m2){
@@ -120,8 +118,6 @@ public class TabellMengde<T> implements MengdeADT<T> {
 				begge.settInn(next);
 			}
 		}
-		
-		// O-notasjon: x*y				, hvor x = antall i m1, og y = antall i m2
 		
 		return begge;
 	}

@@ -11,8 +11,6 @@ public class Hobby {
 		this.hobbyNavn = hobbyNavn;
 	}
 	
-	
-	
 	// Metoder
 	@Override
 	public String toString(){
@@ -29,17 +27,6 @@ public class Hobby {
 		
 		return this.toString().equals(h2.toString());
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	// Getters / setters
-	
-	
 }
 
 
